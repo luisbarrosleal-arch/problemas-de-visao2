@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Problemas de Visão no Dia a Dia</title>
+
+    <style>
+
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #101820;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           MENU
+        ========================== */
+
+        nav {
+            background-color: #17232e;
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            border-bottom: 1px solid #2c4050;
+        }
+
+        .logo {
+            color: #00d4ff;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+
+        /* =========================
+           CAPA
+        ========================== */
+
+        .hero {
+            min-height: 520px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #14566b,
+                    #101820 65%
+                );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #00d4ff;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #cbd5db;
+            margin-bottom: 30px;
+        }
+
+        .botao {
+            display: inline-block;
+
+            background-color: #00d4ff;
+            color: #101820;
+
+            padding: 14px 30px;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            background-color: #72e8ff;
+            transform: scale(1.05);
+        }
+
+
+        /* =========================
+           SEÇÕES
+        ========================== */
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+        section {
+            padding: 70px 0;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .titulo h2 {
+            color: #00d4ff;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .titulo p {
+            color: #b9c5cc;
+        }
+
+
+        /* =========================
+           PROBLEMAS DE VISÃO
+        ========================== */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(230px, 1fr)
+                );
+
+            gap: 25px;
+        }
+
+        .card {
+            background-color: #17232e;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            border: 1px solid #2c4050;
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+
+            border-color: #00d4ff;
+        }
+
+        .icone {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .card p {
+            color: #b9c5cc;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           VÍDEO
+        ========================== */
+
+        .video-section {
+            background-color: #0b131a;
+        }
+
+        .video-container {
+            max-width: 850px;
+            margin: auto;
+
+            background-color: #17232e;
+
+            padding: 20px;
+
+            border-radius: 20px;
+
+            border: 1px solid #2c4050;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /*
+           CONFIGURAÇÃO DO VÍDEO
+
+           O arquivo deve estar na mesma pasta
+           deste arquivo HTML.
+
+           Nome:
+           video_site_compat.webm
+
+           Formato:
+           WebM / VP9 / Opus
+
+           Esse formato é compatível com Firefox.
+        */
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+
+            display: block;
+
+            border-radius: 12px;
+
+            background-color: #000000;
+
+            /*
+               Evita que o vídeo ultrapasse
+               o tamanho do site.
+            */
+            max-width: 100%;
+        }
+
+        .legenda-video {
+            text-align: center;
+
+            color: #b9c5cc;
+
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           IMPACTOS
+        ========================== */
+
+        .lista {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(280px, 1fr)
+                );
+
+            gap: 18px;
+        }
+
+        .item {
+            background-color: #17232e;
+
+            padding: 20px;
+
+            border-radius: 12px;
+
+            border-left: 4px solid #00d4ff;
+        }
+
+        .item strong {
+            display: block;
+
+            color: #00d4ff;
+
+            margin-bottom: 5px;
+        }
+
+        .item p {
+            color: #c6d0d6;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CUIDADOS
+        ========================== */
+
+        .cuidados {
+            text-align: center;
+        }
+
+        .caixa-cuidados {
+            background:
+                linear-gradient(
+                    135deg,
+                    #006d77,
+                    #00a6a6
+                );
+
+            padding: 40px;
+
+            border-radius: 20px;
+        }
+
+        .caixa-cuidados h3 {
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        .caixa-cuidados p {
+            max-width: 750px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           FEEDBACK
+        ========================== */
+
+        .feedback {
+            max-width: 750px;
+            margin: auto;
+
+            background-color: #17232e;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            border: 1px solid #2c4050;
+        }
+
+        .feedback label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+        }
+
+        .feedback input,
+        .feedback textarea {
+            width: 100%;
+
+            padding: 14px;
+
+            margin-bottom: 20px;
+
+            border-radius: 10px;
+
+            border: 1px solid #3b5262;
+
+            background-color: #101820;
+
+            color: #ffffff;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        .feedback input:focus,
+        .feedback textarea:focus {
+            border-color: #00d4ff;
+        }
+
+        .feedback textarea {
+            height: 130px;
+
+            resize: vertical;
+        }
+
+        .feedback button {
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background-color: #00d4ff;
+
+            color: #101820;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .feedback button:hover {
+            background-color: #72e8ff;
+        }
+
+        #resultado {
+            text-align: center;
+
+            margin-top: 15px;
+
+            color: #00d4ff;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           RODAPÉ
+        ========================== */
+
+        footer {
+            background-color: #080d11;
+
+            text-align: center;
+
+            padding: 30px 15px;
+
+            color: #aab5bc;
+        }
+
+        footer strong {
+            color: #00d4ff;
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .feedback {
+                padding: 25px;
+            }
+
+            .video-container {
+                padding: 12px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <nav>
+
+        <div class="logo">
+            👁️ Visão & Saúde
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#problemas">
+                    Problemas
+                </a>
+            </li>
+
+            <li>
+                <a href="#video">
+                    Vídeo
+                </a>
+            </li>
+
+            <li>
+                <a href="#impactos">
+                    Impactos
+                </a>
+            </li>
+
+            <li>
+                <a href="#feedback">
+                    Feedback
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- =========================
+         CAPA
+    ========================== -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Como os problemas de
+                <span>visão</span>
+                afetam o dia a dia?
+            </h1>
+
+            <p>
+                Entenda de forma simples como as alterações
+                na visão podem influenciar atividades comuns
+                do nosso cotidiano.
+            </p>
+
+            <a
+                href="#problemas"
+                class="botao"
+            >
+                Saiba mais
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =========================
+             PROBLEMAS
+        ========================== -->
+
+        <section id="problemas">
+
+            <div class="container">
+
+                <div class="titulo">
+
+                    <h2>
+                        Principais problemas de visão
+                    </h2>
+
+                    <p>
+                        Conheça alguns problemas visuais comuns.
+                    </p>
+
+                </div>
+
+
+                <div class="cards">
+
+
+                    <div class="card">
+
+                        <div class="icone">
+                            🔭
+                        </div>
+
+                        <h3>
+                            Miopia
+                        </h3>
+
+                        <p>
+                            Dificulta a visualização de objetos
+                            que estão distantes, como textos
+                            escritos no quadro.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="card">
+
+                        <div class="icone">
+                            📖
+                        </div>
+
+                        <h3>
+                            Hipermetropia
+                        </h3>
+
+                        <p>
+                            Pode dificultar a visualização
+                            de objetos próximos e causar
+                            desconforto em algumas atividades.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="card">
+
+                        <div class="icone">
+                            〰️
+                        </div>
+
+                        <h3>
+                            Astigmatismo
+                        </h3>
+
+                        <p>
+                            Pode causar visão borrada ou
+                            distorcida em diferentes distâncias.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="card">
+
+                        <div class="icone">
+                            👓
+                        </div>
+
+                        <h3>
+                            Presbiopia
+                        </h3>
+
+                        <p>
+                            É uma alteração relacionada ao
+                            envelhecimento que pode dificultar
+                            o foco em objetos próximos.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             VÍDEO
+        ========================== -->
+
+        <section
+            class="video-section"
+            id="video"
+        >
+
+            <div class="container">
+
+                <div class="titulo">
+
+                    <h2>
+                        🎥 Nosso vídeo
+                    </h2>
+
+                    <p>
+                        Assista ao vídeo sobre o tema.
+                    </p>
+
+                </div>
+
+
+                <div class="video-container">
+
+                    <!--
+                        VÍDEO EM WEBM
+
+                        Coloque o arquivo:
+
+                        video_site_compat.webm
+
+                        na mesma pasta deste HTML.
+                    -->
+
+                    <video
+                        controls
+                        preload="metadata"
+                        playsinline
+                    >
+
+                        <source
+                            src="video_site_compat.webm"
+                            type="video/webm"
+                        >
+
+                        Seu navegador não consegue
+                        reproduzir este vídeo.
+
+                    </video>
+
+
+                    <p class="legenda-video">
+
+                        Vídeo relacionado ao tema:
+                        problemas de visão e seus impactos
+                        no cotidiano.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             IMPACTOS
+        ========================== -->
+
+        <section id="impactos">
+
+            <div class="container">
+
+                <div class="titulo">
+
+                    <h2>
+                        📌 Impactos no dia a dia
+                    </h2>
+
+                    <p>
+                        A visão participa de várias tarefas
+                        realizadas diariamente.
+                    </p>
+
+                </div>
+
+
+                <div class="lista">
+
+
+                    <div class="item">
+
+                        <strong>
+                            📚 Estudos
+                        </strong>
+
+                        <p>
+                            Pode ser mais difícil ler textos,
+                            livros ou enxergar o quadro.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="item">
+
+                        <strong>
+                            💻 Tecnologia
+                        </strong>
+
+                        <p>
+                            O uso de computadores e celulares
+                            pode causar desconforto visual.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="item">
+
+                        <strong>
+                            🚶 Rotina
+                        </strong>
+
+                        <p>
+                            Identificar objetos e informações
+                            à distância pode ser mais difícil.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="item">
+
+                        <strong>
+                            🎯 Concentração
+                        </strong>
+
+                        <p>
+                            Algumas tarefas visuais podem
+                            exigir mais atenção.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="item">
+
+                        <strong>
+                            🏫 Escola
+                        </strong>
+
+                        <p>
+                            Problemas de visão podem dificultar
+                            o acompanhamento das aulas.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="item">
+
+                        <strong>
+                            😴 Cansaço visual
+                        </strong>
+
+                        <p>
+                            Algumas pessoas podem sentir
+                            desconforto ou cansaço visual.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CUIDADOS
+        ========================== -->
+
+        <section class="cuidados">
+
+            <div class="container">
+
+                <div class="titulo">
+
+                    <h2>
+                        💙 Cuidados com a visão
+                    </h2>
+
+                </div>
+
+
+                <div class="caixa-cuidados">
+
+                    <h3>
+                        Cuide dos seus olhos!
+                    </h3>
+
+                    <p>
+                        Consultas com profissionais de saúde,
+                        bons hábitos e atenção a dificuldades
+                        para enxergar são importantes para
+                        cuidar da saúde visual.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FEEDBACK
+        ========================== -->
+
+        <section id="feedback">
+
+            <div class="container">
+
+                <div class="titulo">
+
+                    <h2>
+                        💬 Deixe seu feedback
+                    </h2>
+
+                    <p>
+                        Conte para nós o que você achou do site.
+                    </p>
+
+                </div>
+
+
+                <div class="feedback">
+
+                    <form id="formulario">
+
+
+                        <label for="nome">
+                            Seu nome:
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            placeholder="Digite seu nome"
+                            required
+                        >
+
+
+
+                        <label for="comentario">
+                            Seu comentário:
+                        </label>
+
+                        <textarea
+                            id="comentario"
+                            placeholder="Digite seu feedback aqui..."
+                            required
+                        ></textarea>
+
+
+
+                        <button type="submit">
+                            Enviar feedback 🚀
+                        </button>
+
+
+                        <p id="resultado"></p>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer>
+
+        <p>
+            Trabalho escolar sobre saúde visual.
+        </p>
+
+        <p>
+            Feito por
+            <strong>
+                Luis Eduardo, Adryan Luan e Cauã Victor
+            </strong>
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const formulario =
+            document.getElementById("formulario");
+
+        const resultado =
+            document.getElementById("resultado");
+
+
+        formulario.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const nome =
+                    document.getElementById("nome").value;
+
+
+                resultado.textContent =
+                    "Obrigado pelo feedback, "
+                    + nome
+                    + "! 👁️✨";
+
+
+                formulario.reset();
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
